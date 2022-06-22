@@ -1,17 +1,14 @@
 import React from 'react';
 import Container from '../../components/Container';
+import Featured from '../../components/Featured/Featured';
+import PropertyList from '../../components/PropertyType/PropertyList';
 import MainLayout from '../../layouts/MainLayout';
 
 const Hotels = () => {
   return (
     <MainLayout>
       <Container>
-        <div className=''>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi
-          alias laudantium deserunt nemo reprehenderit totam eum tempora neque
-          eveniet dicta in esse saepe, consequatur laborum optio, enim,
-          consectetur animi repellendus!
-        </div>
+        <h1 className='text-4xl font-extrabold'>Hotels Page</h1>
       </Container>
     </MainLayout>
   );

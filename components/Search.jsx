@@ -30,7 +30,7 @@ const Search = () => {
     });
   };
   return (
-    <div className='flex bg-white text-slate-600 border-4 border-yellow-400 rounded-lg  w-full absolute -bottom-32 gap-12'>
+    <div className='flex z-10 bg-white text-slate-600 border-4 border-yellow-400 rounded-lg  w-full absolute -bottom-32 gap-12'>
       <div className='w-1/3 flex items-center gap-4 px-2'>
         <FaCalendarAlt />
         <input
