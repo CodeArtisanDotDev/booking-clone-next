@@ -66,13 +66,9 @@ const Search = () => {
       {/* input date range */}
       <div className='w-1/3 flex items-center gap-4 relative'>
         <FaCalendarAlt />
-        <input
-          onClick={() => setShowOptions(!showOptions)}
-          type='text'
-          name=''
-          id=''
-          className='w-full py-3 border-none'
-        />
+        <span onClick={() => setShowOptions(!showOptions)}>
+          {`${options.adult} adults - ${options.children} children - ${options.rooms} room(s)`}
+        </span>
         {showOptions && (
           <div className='w-full absolute top-[86px] bg-white text-slate-600 border space-y-2'>
             <div className='flex items-center justify-between p-3'>
