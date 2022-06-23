@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className='w-full bg-blue-900'>
       <div className='max-w-7xl h-32 mx-auto text-white flex items-center justify-between'>
         <Link href={'/'}>
-          <span className='font-semibold text-lg uppercase cursor-pointer'>
+          <span className='font-semibold uppercase cursor-pointer text-2xl'>
             Booking.com
           </span>
         </Link>

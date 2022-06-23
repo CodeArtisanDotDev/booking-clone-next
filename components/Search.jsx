@@ -4,10 +4,11 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
-import Options from './Options';
+import { useRouter } from 'next/router';
 
 const Search = () => {
   const [date, setShowdate] = useState(false);
+  const [destination, setDestination] = useState('');
   const [showOptions, setShowOptions] = useState(false);
   const [state, setState] = useState([
     {
@@ -29,11 +30,24 @@ const Search = () => {
       };
     });
   };
+  const router = useRouter();
+  const handleSearch = () => {
+    router.push({
+      pathname: '/hotels',
+      query: {
+        date: JSON.stringify(state),
+        destination: destination,
+        options: JSON.stringify(options),
+      },
+    });
+  };
   return (
     <div className='flex z-10 bg-white text-slate-600 border-4 border-yellow-400 rounded-lg  w-full absolute -bottom-32 gap-12'>
       <div className='w-1/3 flex items-center gap-4 px-2'>
         <FaCalendarAlt />
         <input
+          onChange={(e) => setDestination(e.target.value)}
+          value={destination}
           type='text'
           name=''
           id=''
@@ -132,7 +146,10 @@ const Search = () => {
         )}
       </div>
       {/* input Options */}
-      <button className='py-6 px-4 flex gap-3 items-center border bg-blue-600 text-white border-slate-400'>
+      <button
+        onClick={handleSearch}
+        className='py-6 px-4 flex gap-3 items-center border bg-blue-600 text-white border-slate-400'
+      >
         <FaSearch className='w-6 h-6' />
         <span>SEARCH</span>
       </button>
